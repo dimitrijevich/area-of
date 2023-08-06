@@ -1,0 +1,76 @@
+<div class="bg">
+
+    <div class="navbar">
+        <div class="nav">
+            <div class="search">
+                <div class="input-wrapper">
+                    <input type="text" id="search-bar" readonly="true" [(ngModel)]="location">
+                    <i class="pi pi-search" style="font-size: 0.8rem"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="showFrame" class="overlay">
+
+    </div>
+
+
+    <div class="loader" *ngIf="profiles.length == 0">
+        <h3 class="custom-heading">Getting results for: {{location}}</h3>
+        <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+    </div>
+
+
+    <div class="container">
+        <div *ngFor="let profile of profiles" class="card">
+            <div class="star">
+                <i class="pi pi-star" style="font-size: 1.2rem"></i>
+            </div>
+            <img [src]="profile.img" alt="">
+
+            <div class="content">
+                <div id="username">
+                    <p>{{profile.username}}</p>
+                    <img src="../../assets/img/badge.png" alt="">
+                </div>
+
+                <h3 class="name">{{profile.name}}</h3>
+
+                <div id="desc">{{profile.desc}}</div>
+                
+                <div *ngIf="profile.stats != null" class="stats">
+                    <div class="stat">
+                        <i class="pi pi-tag bold-icon" style="font-size: 1rem"></i>
+                        <p><b>{{profile.stats.price}}</b></p>
+                    </div>
+                    <div class="stat">
+                        <i class="pi pi-camera bold-icon" style="font-size: 1rem"></i>
+                        <p><b>{{profile.stats.numOfPhotos}}</b></p>
+                    </div>
+                    <div class="stat">
+                        <i class="pi pi-video bold-icon" style="font-size: 1rem"></i>
+                        <p><b>{{profile.stats.numOfVideos}}</b></p>
+                    </div>
+                    <div class="stat">
+                        <i class="pi pi-users bold-icon" style="font-size: 1rem"></i>
+                        <p><b>{{profile.stats.subs}}</b></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="frame" *ngIf="showFrame">
+        <div class="content">
+            <p>Click <b>'Unlock Content'</b> to start exploring.</p>
+            <button (click)="redirect()">Unlock Content</button>   
+        </div>
+    </div>
+
+</div>
+
+

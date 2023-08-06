@@ -1,0 +1,66 @@
+<div class="container">
+
+    <div class="gradient-background">
+        <img id="logo" src="../../assets/img/logo.png" alt="">
+
+        <div class="content">
+            <img id="anim-1" src="../../assets/img/anim.svg" alt="">
+            <img id="anim-2" src="../../assets/img/anim.svg" alt="">
+
+            <h1 class="custom-heading">
+                Find <span class="OF">OnlyFans</span><br>
+                Profiles <span>in your</span> <br>
+                <span class="underlined underline-clip">Area</span>
+            </h1>
+
+            <form [formGroup]="actionForm" (ngSubmit)="submit()">
+                <div class="field-container">
+                    <input class="loc-input" id="location" type="text" placeholder="Enter location.."
+                        formControlName="location">
+
+                    <button class="btn transparent" id="sign-up-btn">
+                        Search
+                    </button>
+
+                </div>
+            </form>
+        </div>
+
+        
+    </div>
+
+
+    <div class="section">
+        <span class="line"></span>
+
+
+        <h1 class="custom-heading-2">
+            <span class="OF">Our <span class="OF-color">Community</span> in Stats</span><br>
+        </h1>
+       
+        
+        <div class="divide">
+            <div class="left">
+                <h1 class="OF-color" class="custom-heading-1">
+                    <span class="OF-color">2.1M</span><br>
+                </h1>
+                <h5>Content <br> Creators</h5>
+            </div>
+            <span class="divider"></span>
+            <div class="right">
+                <h1  class="OF-color" class="custom-heading-1">
+                    <span class="OF-color">1.3M</span><br>
+                </h1>
+                <h5>Available <br> Locations</h5>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer">
+        Copyright © 2023 OnlySearch Viewer
+    </div>
+
+
+</div>
