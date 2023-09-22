@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpService {
-  private apiUrl = 'https://of-area-api-7edb2aeca382.herokuapp.com'; 
+  private apiUrl = 'https://of-info-get-4c3612417bd3.herokuapp.com'; 
 
   constructor(private http: HttpClient) { }
 
