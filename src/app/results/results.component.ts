@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { HttpService } from '../services/http-service.service';
+import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 declare var og_load: any;
 
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
-  styleUrls: ['./results.component.css']
+  styleUrls: ['./results.component.css'],
+  providers: [MessageService]
 })
 export class ResultsComponent {
 
@@ -15,7 +18,7 @@ export class ResultsComponent {
   showFrame: boolean = false;
  
 
-  constructor(private service: HttpService){
+  constructor(private service: HttpService,private messageService: MessageService,  private router: Router){
 
   }
 
@@ -41,10 +44,24 @@ export class ResultsComponent {
 
       },
       error: err => {
+
+        setTimeout(() => {
+          this.showError("An error occurred. Please try again later or check back in a few moments.")
+        }, 1500);
+        
+        setTimeout(() => {
+          this.router.navigate(['/']);
+        }, 5000);
+        
+        
         console.log(err);
       }
     })
   }
 
+
+  showError(msg: string) {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: msg });
+  }
 
 }
