@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpService } from '../services/http-service.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-declare var og_load: any;
+declare var _ET: any;
 
 @Component({
   selector: 'app-results',
@@ -28,7 +28,7 @@ export class ResultsComponent {
   }
 
   redirect(){
-    og_load();
+    _ET();
   }
 
 
